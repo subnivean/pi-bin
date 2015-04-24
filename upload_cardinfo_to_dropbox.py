@@ -7,7 +7,7 @@ SCRIPT = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh"
 CMD = "upload"
 
 date = check_output(["date"], shell=True)
-hostname = check_output(["hostname"], shell=True)
+hostname = check_output(["hostname"], shell=True).strip()
 uuid = check_output(["ls -l /dev/disk/by-uuid |grep mmcblk0p1 |cut -c40-48"],
                      shell=True)[:-1]
 dpkgs = check_output(["dpkg --get-selections"], shell=True)
