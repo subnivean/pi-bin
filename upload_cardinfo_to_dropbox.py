@@ -29,8 +29,9 @@ interfaces = check_output(["cat /etc/network/interfaces"], shell=True)
 
 sep = "\n" + "*" * 79 + "\n"
 
-filename = "/home/pi/bin/{}.dat".format(uuid)
-remfilename = "{}.dat".format(uuid)
+#filename = "/home/pi/bin/{}.dat".format(uuid)
+filename = "/tmp/{}_{}.dat".format(hostname, uuid)
+remfilename = "{}_{}.dat".format(hostname, uuid)
 
 fh = open(filename, 'w')
 fh.write("Data for card UUID {}\n============================\n".format(uuid))
